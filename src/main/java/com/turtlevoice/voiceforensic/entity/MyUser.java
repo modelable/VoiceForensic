@@ -3,6 +3,8 @@ package com.turtlevoice.voiceforensic.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
 // class name 'User' already exists in Spring
 @Data
 @Entity
@@ -30,5 +32,11 @@ public class MyUser {
     @JoinColumn(name = "controlfiles_id")
     private ControlFile controlFile;
 
-
+    @ManyToMany(cascade = CascadeType.MERGE)
+    @JoinTable(
+            name="user_role",
+            joinColumns = {@JoinColumn(name="USER_ID", referencedColumnName = "ID")},
+            inverseJoinColumns = {@JoinColumn(name="ROLE_ID", referencedColumnName = "ID")}
+    )
+    private List<MyRole> roles;
 }
