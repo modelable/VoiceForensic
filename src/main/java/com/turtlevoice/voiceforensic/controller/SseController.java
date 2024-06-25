@@ -2,6 +2,7 @@ package com.turtlevoice.voiceforensic.controller;
 
 
 import com.turtlevoice.voiceforensic.service.FlaskService;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +22,17 @@ public class SseController {
     private FlaskService flaskService;
 
     @GetMapping("/upload_wait_events")
-    public SseEmitter handleUploadWaitEvents() {
+    public SseEmitter handleUploadWaitEvents(HttpServletResponse response) {
+        response.setContentType(MediaType.TEXT_EVENT_STREAM_VALUE);
+        response.setHeader("Cache-Control", "no-cache");
+        response.setHeader("Connection", "keep-alive");
+
+        try {
+            response.flushBuffer();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         SseEmitter emitter = new SseEmitter();
 
         executorService.execute(() -> {
