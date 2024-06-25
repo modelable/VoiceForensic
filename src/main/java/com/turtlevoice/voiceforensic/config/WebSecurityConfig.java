@@ -1,4 +1,4 @@
-package com.turtlevoice.config;
+package com.turtlevoice.voiceforensic.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

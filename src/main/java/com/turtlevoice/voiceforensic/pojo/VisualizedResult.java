@@ -1,4 +1,4 @@
-package com.turtlevoice.pojo;
+package com.turtlevoice.voiceforensic.pojo;
 
 import com.turtlevoice.voiceforensic.entity.*;
 import lombok.AllArgsConstructor;

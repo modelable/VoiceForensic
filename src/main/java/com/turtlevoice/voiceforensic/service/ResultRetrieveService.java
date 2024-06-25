@@ -1,9 +1,7 @@
-package com.turtlevoice.service;
+package com.turtlevoice.voiceforensic.service;
 
-import com.turtlevoice.pojo.UserAndResult;
-import com.turtlevoice.pojo.VisualizedResult;
-import com.turtlevoice.voiceforensic.entity.ControlCoef;
-import com.turtlevoice.voiceforensic.entity.RecordCoefAvg;
+import com.turtlevoice.voiceforensic.pojo.UserAndResult;
+import com.turtlevoice.voiceforensic.pojo.VisualizedResult;
 import com.turtlevoice.voiceforensic.entity.Result;
 import com.turtlevoice.voiceforensic.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;

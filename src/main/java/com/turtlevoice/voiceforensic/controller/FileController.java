@@ -1,6 +1,6 @@
-package com.turtlevoice.controller;
+package com.turtlevoice.voiceforensic.controller;
 
-import com.turtlevoice.service.ResultRetrieveService;
+import com.turtlevoice.voiceforensic.service.ResultRetrieveService;
 import com.turtlevoice.voiceforensic.entity.MyUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

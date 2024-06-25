@@ -1,7 +1,7 @@
-package com.turtlevoice.controller;
+package com.turtlevoice.voiceforensic.controller;
 
 
-import com.turtlevoice.service.FlaskService;
+import com.turtlevoice.voiceforensic.service.FlaskService;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
