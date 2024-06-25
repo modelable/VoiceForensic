@@ -7,7 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
+import org.springframework.security.crypto.password.PasswordEncoder;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
@@ -15,34 +15,24 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class VoiceForensicApplicationTests {
 
     @Autowired
-    private ControlCoefAvgRepository controlCoefAvgRepository;
-
-    @Autowired
-    private ControlCoefRepository controlCoefRepository;
-
-    @Autowired
-    private ControlFileRepository controlFileRepository;
-
-    @Autowired
     private RecordCoefAvgRepository recordCoefAvgRepository;
-
     @Autowired
     private RecordCoefRepository recordCoefRepository;
-
     @Autowired
     private RecordFileRepository recordFileRepository;
 
     @Autowired
-    private ResultRepository resultRepository;
-
-    @Autowired
-    private RoleRepository roleRepository;
-
-    @Autowired
-    private UserRepository userRepository;
+    private PasswordEncoder encoder;
 
     @Test
     void contextLoads() {
+    }
+
+    @Test
+    @DisplayName("Test: password encoding")
+    void generateHashedPassword() {
+        String pwd = encoder.encode("passwordtest");
+        System.out.println(pwd);
     }
 
     @Test

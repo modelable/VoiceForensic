@@ -1,4 +1,4 @@
-package com.turtlevoice.controller;
+package com.turtlevoice.voiceforensic.controller;
 
 import org.springframework.web.bind.annotation.*;
 
